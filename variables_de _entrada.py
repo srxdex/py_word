@@ -1,3 +1,10 @@
+from docx import Document
+from docx.shared import Inches
+import win32com.client as win32 
+import sys 
+
+document = Document('informe.docx')
+
 nombre = input("ingrese nombre")
 rut = input ("ingrese rut")
 otsech = input("ingrgese ot sech")
@@ -14,4 +21,7 @@ falla2 = input ("ingrese 2a falla")
 r1 = input ("ingrese reparacion 1a vez")
 r2 = input("ingrese reparacion 2a vez")
 
-print ( r1 , r2 , falla1 , falla2 )
+paragraph = document.add_paragraph(nombre)
+
+
+document.save ('informe {}.docx' .format(otasc) )
