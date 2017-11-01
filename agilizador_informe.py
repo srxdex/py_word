@@ -25,10 +25,11 @@ falla2 = input ("ingrese 2a falla ")
 r1 = input ("ingrese reparacion 1a vez ")
 r2 = input("ingrese reparacion 2a vez ")
 
-rng=doc.Bookmarks("direccion").Range 
-rng.InsertAfter(direc)
+
 rng=doc.Bookmarks("nombre").Range # change the string Name to whatever name of your bookmarks
 rng.InsertAfter(nombre)
+rng=doc.Bookmarks("direccion").Range 
+rng.InsertAfter(direc)
 rng=doc.Bookmarks("rut").Range 
 rng.InsertAfter(rut)
 rng=doc.Bookmarks("otsech").Range 
@@ -58,6 +59,21 @@ rng.InsertAfter(r1)
 rng=doc.Bookmarks("r2").Range 
 rng.InsertAfter(r2)
 
+#agregando imagenes
 
-#document.save ('informe {}.docx' .format(otasc) )
+rng=doc.Bookmarks("image1").Range
+rng.InlineShapes.AddPicture("c:/ima/{}/1.jpg" .format(otasc))
+
+rng=doc.Bookmarks("image2").Range
+rng.InlineShapes.AddPicture("c:/ima/{}/2.jpg" .format(otasc))
+
+rng=doc.Bookmarks("image3").Range
+rng.InlineShapes.AddPicture("c:/ima/{}/3.jpg" .format(otasc))
+
+
+
+#guardando documento ....
+print ('guardando documento')
+
+
 doc.SaveAs("informe {}.doc" .format(otasc))
